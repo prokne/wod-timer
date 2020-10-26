@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/869aa3ac96.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>WOD Timer</title>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="navbar navbar-expand-lg navbar-light navigation">
+        <a class="navbar-brand" href="index.html">WOD TIMER</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav justify-content-center w-100">
+            <li class="nav-item">
+              <button class="AMRAP" data-text="AMRAP">AMRAP</button>
+            </li>
+            <li class="nav-item">
+              <button class="tabata" data-text="Tabata">TABATA</button>
+            </li>
+            <li class="nav-item">
+              <button class="EMOM" data-text="EMOM">EMOM</button>
+            </li>
+            <li class="nav-item">
+              <button class="stopky" data-text="Stopky">STOPKY</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="timer">
+        <h1 class="time-show">00:00</h1>
+
+        <div class="tabata-show">
+          <h2>Práce</h2>
+          <h2 class="work-show">00:00</h2>
+          <h2>Odpočinek</h2>
+          <h2 class="rest-show">00:00</h2>
+        </div>
+
+        <audio class="short-sound">
+          <source src="./sounds/beep-short.mp3" />
+        </audio>
+        <audio class="long-sound">
+          <source src="./sounds/beep-long.mp3" />
+        </audio>
+        <div class="time-control">
+          <button class="start">
+            <img
+              class="start-image"
+              button-type="play"
+              src="./images/play-button.png"
+              alt="play"
+            />
+          </button>
+          <button class="stop">
+            <img src="./images/stop.png" alt="stop" />
+          </button>
+        </div>
+      </div>
+
+      <div class="setup">
+        <div class="timer-setup-form">
+          <div class="timer-setup">
+            <h3>Délka tréninku</h3>
+
+            <div class="form-group row">
+              <label class="col-form-label col-4"> Minuty:</label>
+              <input class="minutes col-4" type="text" value="00" />
+              <button class="col-2 btn-minutes-plus">
+                <i far class="far fa-plus-square"></i>
+              </button>
+              <button class="col-2 btn-minutes-minus">
+                <i class="far fa-minus-square"></i>
+              </button>
+            </div>
+            <div class="form-group row">
+              <label class="col-form-label col-4"> Sekundy:</label>
+              <input class="seconds col-4" type="text" value="00" />
+              <button class="col-2 btn-seconds-plus">
+                <i far class="far fa-plus-square"></i>
+              </button>
+              <button class="col-2 btn-seconds-minus">
+                <i class="far fa-minus-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="tabata-setup">
+            <h3>TABATA</h3>
+            <div class="form-group number-of-rounds">
+              <label class="col-form-label">Počet kol:</label>
+              <input class="tabata-rounds col-4" type="text" value="0" />
+              <button class="col-2 btn-rounds-plus">
+                <i far class="far fa-plus-square"></i>
+              </button>
+              <button class="col-2 btn-rounds-minus">
+                <i class="far fa-minus-square"></i>
+              </button>
+            </div>
+            <div class="row">
+              <div class="col-md-6 tabata-col">
+                <h4>Práce</h4>
+                <div class="form-group row">
+                  <label class="col-form-label col-4"> Minuty:</label>
+                  <input class="work-minutes col-4" type="text" value="00" />
+                  <button class="col-2 btn-work-minutes-plus">
+                    <i far class="far fa-plus-square"></i>
+                  </button>
+                  <button class="col-2 btn-work-minutes-minus">
+                    <i class="far fa-minus-square"></i>
+                  </button>
+                </div>
+                <div class="form-group row">
+                  <label class="col-form-label col-4"> Sekundy:</label>
+                  <input class="work-seconds col-4" type="text" value="00" />
+                  <button class="col-2 btn-work-seconds-plus">
+                    <i far class="far fa-plus-square"></i>
+                  </button>
+                  <button class="col-2 btn-work-seconds-minus">
+                    <i class="far fa-minus-square"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6 tabata-col">
+                <h4>Odpočinek</h4>
+                <div class="form-group row">
+                  <label class="col-form-label col-4"> Minuty:</label>
+                  <input class="rest-minutes col-4" type="text" value="00" />
+                  <button class="col-2 btn-rest-minutes-plus">
+                    <i far class="far fa-plus-square"></i>
+                  </button>
+                  <button class="col-2 btn-rest-minutes-minus">
+                    <i class="far fa-minus-square"></i>
+                  </button>
+                </div>
+                <div class="form-group row">
+                  <label class="col-form-label col-4"> Sekundy:</label>
+                  <input class="rest-seconds col-4" type="text" value="00" />
+                  <button class="col-2 btn-rest-seconds-plus">
+                    <i far class="far fa-plus-square"></i>
+                  </button>
+                  <button class="col-2 btn-rest-seconds-minus">
+                    <i class="far fa-minus-square"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="round-control">
+          <label class="rounds-count">Počítadlo kol: 0</label>
+          <button class="add-round">+</button>
+        </div> -->
+        </div>
+
+        <script
+          src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+          crossorigin="anonymous"
+        ></script>
+        <script src="./app.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
