@@ -204,16 +204,23 @@ h4 {
 }
 
 @media only screen and (max-width: 400px) {
+  .navbar-brand {
+    font-size: 2.5rem;
+  }
+  .navigation {
+    font-size: 2rem;
+  }
   .time-show {
-    font-size: 10rem;
+    font-size: 9rem;
   }
 
   .tabata-setup {
     width: 85%;
+    font-size: 1.3rem;
   }
 
   .tabata-show h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .tabata-col {
@@ -224,6 +231,6 @@ h4 {
     width: 100%;
   }
   .number-of-rounds input {
-    width: 45px;
+    width: 35px;
   }
 }
