@@ -186,7 +186,15 @@ h4 {
 /* Mobile version */
 @media only screen and (max-width: 600px) {
   .time-show {
-    font-size: 12rem;
+    font-size: 10rem;
+  }
+
+  .tabata-setup {
+    width: 85%;
+  }
+
+  .tabata-show h2 {
+    font-size: 1.7rem;
   }
 
   .number-of-rounds {
