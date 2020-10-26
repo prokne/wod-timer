@@ -188,11 +188,9 @@ h4 {
   .time-show {
     font-size: 10rem;
   }
-
   .tabata-setup {
     width: 85%;
   }
-
   .tabata-show h2 {
     font-size: 1.7rem;
   }
@@ -202,5 +200,30 @@ h4 {
   }
   .number-of-rounds input {
     width: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .time-show {
+    font-size: 10rem;
+  }
+
+  .tabata-setup {
+    width: 85%;
+  }
+
+  .tabata-show h2 {
+    font-size: 1.5rem;
+  }
+
+  .tabata-col {
+    padding: 20px;
+  }
+
+  .number-of-rounds {
+    width: 100%;
+  }
+  .number-of-rounds input {
+    width: 45px;
   }
 }
