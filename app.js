@@ -346,7 +346,7 @@ function app() {
     restSecondsFromInput = restSecondsInput.value;
     restMinutesFromInput = restMinutesInput.value;
 
-    if (isAMRAP) {
+    if (isAMRAP || isEMOM) {
       amrapTime.getTime();
       amrapTime.setSeconds(secondsInput.value);
       amrapTime.setMinutes(minutesInput.value);
