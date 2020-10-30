@@ -48,6 +48,7 @@ function app() {
   //Sounds
   const shortSound = document.querySelector(".short-sound");
   const longSound = document.querySelector(".long-sound");
+  const video = document.querySelector(".video");
 
   //images
   const startButtonImage = document.querySelector(".start-image");
@@ -595,8 +596,10 @@ function app() {
     if (isFirstRound) {
       if (isStopky) {
         timerStartStopWatch();
+        video.play();
       } else {
         getReady();
+        video.play();
       }
       startButtonImage.src = "./images/pause.png";
       isFirstRound = false;
@@ -613,6 +616,7 @@ function app() {
   });*/
 
   resetButton.addEventListener("click", () => {
+    video.stop();
     clearInterval(intertval);
     isPaused = false;
     savedTime = null;

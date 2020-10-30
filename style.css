@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: #ebebeb;
+}
 
 h3,
 h4 {
@@ -13,7 +16,6 @@ h4 {
 .app {
   height: 100vh;
 }
-.timer,
 .setup {
   flex: 1;
   display: flex;
@@ -55,13 +57,13 @@ h4 {
 
 .timer {
   background: #ebebeb;
-  height: 100%;
-  flex-direction: column;
+  text-align: center;
 }
 .time-show {
   font-size: 320px;
   color: #af2d2d;
   font-family: "Staatliches", cursive;
+  margin: 50px auto 20px;
 }
 .timer-type {
   position: absolute;
@@ -92,6 +94,10 @@ h4 {
 
 .setup {
   background: #ebebeb;
+}
+
+.time-control {
+  margin: 30px auto;
 }
 .time-control button {
   color: none;
