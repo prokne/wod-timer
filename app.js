@@ -500,7 +500,7 @@ function app() {
         ((amrapTime - diferenceTime) % (1000 * 60 * 60)) / (1000 * 60)
       );
 
-      if (seconds > 0) {
+      if (!(minutes === 0 && seconds === 0)) {
         //WORK
         if (work) {
           //last 3 seconds beep sound
@@ -515,8 +515,8 @@ function app() {
             //reset the worktime
           } else if (workMinutes === 0 && workSeconds === 0) {
             workTimeShow.textContent = `${workMinutesFromInput}:${workSecondsFromInput}`;
-            work = false;
             restStartTime = new Date().getTime();
+            work = false;
             //edit format
             //restSeconds = restSeconds < 10 ? `0${restSeconds}` : restSeconds;
             //restMinutes = restMinutes < 10 ? `0${restMinutes}` : restMinutes;
