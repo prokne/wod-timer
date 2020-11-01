@@ -49,6 +49,7 @@ function app() {
   const shortSound = document.querySelector(".short-sound");
   const longSound = document.querySelector(".long-sound");
   const video = document.querySelector(".video");
+  video.muted = true;
 
   //images
   const startButtonImage = document.querySelector(".start-image");
