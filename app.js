@@ -641,19 +641,19 @@ function app() {
   });*/
 
   resetButton.addEventListener("click", () => {
-    console.log("clicked on reset button");
     video.pause();
     clearInterval(intertval);
+    clearInterval(getReadyInterval);
     isPaused = true;
     savedTime = null;
-    savedWorkTime = 0;
-    savedRestTime = 0;
     startButtonImage.src = "./images/play-button.png";
     isFirstRound = true;
     if (isStopky) {
       time.textContent = "00:00";
     }
     else if (isTabata){
+      savedWorkTime = 0;
+      savedRestTime = 0;
       workTimeShow.textContent = `${workMinutesInput.value}:${workSecondsInput.value}`;
       restTimeShow.textContent = `${restMinutesInput.value}:${restSecondsInput.value}`;
       countTabataTime();
