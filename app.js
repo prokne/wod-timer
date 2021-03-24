@@ -466,11 +466,10 @@ function app() {
       }
       if (minutes <= 0 && seconds <= 0 && (isAMRAP || isEMOM)) {
         //if the timer ends
-        clearInterval(intertval);
-        time.textContent = `${minutes}:00`;
         longSound.play();
         startButtonImage.src = "./images/play-button.png";
-        isFirstRound = true;
+        clearTime();
+        time.textContent = "00:00";
       } else {
         time.textContent = `${minutes}:${seconds}`;
       }
@@ -538,7 +537,6 @@ function app() {
             savedRestTime = 0;
 
             restStartTime = new Date().getTime();
-
           } else {
             //edit format
             workSeconds = workSeconds < 10 ? `0${workSeconds}` : workSeconds;
@@ -584,13 +582,11 @@ function app() {
 
       //End of Tabata
       else {
-        time.textContent = `00:00`;
-        restTimeShow.textContent = `00:00`;
-        workTimeShow.textContent = `00:00`;
-        clearInterval(intertval);
         longSound.play();
         startButtonImage.src = "./images/play-button.png";
         isFirstRound = true;
+        clearTime();
+        time.textContent = "00:00";
       }
 
       //last 3 seconds beep sound
@@ -618,6 +614,15 @@ function app() {
     console.log("kliknul jsem na tlačítko pause");
   }
 
+  function clearTime() {
+    video.pause();
+    clearInterval(intertval);
+    clearInterval(getReadyInterval);
+    isPaused = true;
+    savedTime = null;
+    isFirstRound = true;
+  }
+
   startButton.addEventListener("click", () => {
     if (isPaused) {
       video.play();
@@ -641,25 +646,18 @@ function app() {
   });*/
 
   resetButton.addEventListener("click", () => {
-    video.pause();
-    clearInterval(intertval);
-    clearInterval(getReadyInterval);
-    isPaused = true;
-    savedTime = null;
     startButtonImage.src = "./images/play-button.png";
-    isFirstRound = true;
+    clearTime();
     if (isStopky) {
       time.textContent = "00:00";
-    }
-    else if (isTabata){
+    } else if (isTabata) {
       savedWorkTime = 0;
       savedRestTime = 0;
       workTimeShow.textContent = `${workMinutesInput.value}:${workSecondsInput.value}`;
       restTimeShow.textContent = `${restMinutesInput.value}:${restSecondsInput.value}`;
       countTabataTime();
       work = true;
-    }
-    else {
+    } else {
       time.textContent = `${minutesInput.value}:${secondsInput.value}`;
     }
   });
